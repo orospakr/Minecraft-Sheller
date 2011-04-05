@@ -104,7 +104,7 @@ if [[ -z $SCREEN_PID ]]; then
 	MC_PID=''
 else
 #	MC_PID=$(ps $SCREEN_PID -F -C java -o pid,ppid,comm | tail -1 | awk '{print $2}')
-	MC_PID=$(ps -a -u $SCREEN_NAME -o pid,ppid,comm | $PERL -ne 'if ($_ =~ /^\s*(\d+)\s+'$SCREEN_PID'\s+java/) { print $1; }')
+	MC_PID=$(ps -a -u $USERNAME -o pid,ppid,comm | $PERL -ne 'if ($_ =~ /^\s*(\d+)\s+'$SCREEN_PID'\s+java/) { print $1; }')
 fi
 
 display() {
